@@ -1,0 +1,49 @@
+
+<!-- inputttan değer gönderme işlemlerinde [attribute_name] gibi bir kullanım yapıyoruz -->
+
+<h1>Parent Component</h1>
+Mesaj : {{message}}
+
+<!-- instance -->
+<!-- div gibi bir yapı ekranda herhangi element oluşturmadan bir wrapper görevi görevi görür. -->
+<!-- ng-template normalde sayfa görünmez bir case *ngIf ile hangi template görüneceğine karar veririz
+ng-container direk sayfaya yansır ve bir ayraç section görevi görür.
+Fragment React bilenler için.
+Tasarımsal olarak bazen div yada bir element içerisine alamadığınız kodları gruplama amaçlı template kullanılan bir yöntem.
+-->
+<ng-container #container1>
+  <p>
+    Container
+  </p>
+</ng-container>
+
+
+<borsa-ist-child 
+#child1
+*ngIf="data.length > 0"
+[names]="['ali','ahmet','mehmet']"
+(nameAdded)="onNameAdded($event)">
+<!-- içinede ya 2 tane p değeri 1 h1 değeri eklemem lazım gibi bir case ortaya çıktı -->
+<p>P1</p>
+<p>P2</p>
+<h1>H1</h1>
+<!-- ng-content ile bir componente html element eklenebilir. kendize tasarımsal bir durum için section ayırmış oluyorsunuz. -->
+</borsa-ist-child>
+
+<button (click)="clear()">Temizle</button>
+
+
+<!-- instance -->
+<borsa-ist-child
+ #child2
+*ngIf="data.length > 0"
+[names]="['cenk','cansu']"
+(nameAdded)="onNameAdded($event)"
+
+></borsa-ist-child>
+
+<!-- parent component üzerinden child compont deki bir methodu tetikleyerek bir davranış sergilemek istersek bu durumda viewchild dediğimiz bir yöntem kullanmamız gerekiyor. -->
+<!-- component düzeyinde bir referans tanımlaması yaptık -->
+
+
+

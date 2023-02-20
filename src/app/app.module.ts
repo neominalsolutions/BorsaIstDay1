@@ -3,9 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
+import { ParentComponent } from './parent-childs/parent/parent.component';
+import { ChildComponent } from './parent-childs/child/child.component';
 
 @NgModule({
-  declarations: [AppComponent, DataBindingComponent],
+  declarations: [AppComponent, DataBindingComponent, ParentComponent, ChildComponent],
   imports: [BrowserModule],
   providers: [],
   bootstrap: [AppComponent],

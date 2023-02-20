@@ -1,0 +1,19 @@
+
+<!--  -->
+
+<hr />
+<h1>Child Component</h1>
+<ng-content></ng-content> 
+<!-- buraya dışarıdan bir html element girecek işaret attık -->
+<hr />
+<ul>
+  <li *ngFor="let name of names">
+    {{name}}
+  </li>
+</ul>
+
+<!-- input ref üzerinden -->
+<input #inpt (change)="addName(inpt)" placeholder="ekle">
+
+
+<!-- ng-container,ng-content,ng-template -->
