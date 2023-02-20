@@ -1,0 +1,107 @@
+
+<!-- Angular built-in directives (ngIf,ngFor,ngStyle,ngSwitch,ng-template,[hidden],[disabled]) -->
+<!-- event binding (event_name) -->
+<!-- attribute binding [attribute_name] -->
+
+<!-- two way binding -->
+<p>
+  Number: {{num}}
+</p>
+<button *ngIf="num <= thresholdNumber" (click)="increase()">Increase</button>
+<button [hidden]="num == 3" (click)="decrease()">Decrease</button>
+<!-- domdan elementi kaldırmıyor bunun yerine elementi display:none olmasını sağlıyor. -->
+<!-- attribute değişikliği yapan directive yazım şekli [attribute_name] -->
+<!-- html elementlerin attributeleri dışında özel directiveler *ng ile başlayan directivelerimiz oluyor. -->
+
+<!-- ngIf ile doma elementi append yada remove işlemleri yapıyoruz  -->
+
+
+<!-- template tarafında bir kontrol işlemi yapılacak ise directive değişimiz html elementlere özellik kazandıran yapılar ile çalışıyoruz -->
+<!-- thresholdNumber 10 oludğunda Increase buton görünmesin -->
+
+<!-- *ngFor: Angular Built-in directive -->
+<!-- htmldeki verinin çoklanması için kullanılır. -->
+<!-- elemenleri çoklamak istiyoruz. dinamik element çoklayabilmek -->
+
+<!-- Template üzerinden bir öok müdehale edeceğimiz özelik barındırıyor -->
+
+<ul>
+  <li *ngFor="let number of numbers">
+  
+    <p [ngSwitch]="number">
+      {{number}} 
+      <span *ngSwitchCase="5">
+        <!-- [ngClass] directive bir elemente bir koşula göre className tanımlaması yapılabilir -->
+        <span [ngClass]="number == 5 ? 'active':'passive'">
+          : Five
+        </span>
+       
+      </span>
+
+      <span *ngSwitchCase="10">
+        <!-- [ngStyle] directive ile {} formatında birden fazla style değerini geçebiliriz inline-style  -->
+        <span [ngClass]="number == 5 ? 'active':'passive'" [ngStyle]="{'color':'green'}">
+          : Ten
+        </span>
+      </span>
+
+      <!-- style attribute -->
+      <span *ngSwitchCase="15">
+        <span [style.color]="'purple'">
+          : Fifteen
+        </span>
+       
+      </span>
+    </p>
+  </li>
+</ul>
+
+
+<!-- switch case : 2 veya daha fazla case durumu söz konusu olduğunda işimi görür -->
+
+
+
+<!-- ternary if template tanımı -->
+
+<!-- <div id="temp1"></div> -->
+
+<!-- ng-template normalde ekranda ilk açılışta görünmez bir case sonucu templateler view yüklenir -->
+<!-- container görevi görür birden çok elementi tek bir koşula göre ekranda göstermemize olanak sağlar -->
+
+<!-- template if kullanımı -->
+
+
+<!-- <div *ngIf="num > thresholdNumber">
+  <p>Template 1</p>
+</div>
+
+<div *ngIf="num < thresholdNumber">
+  <p>Template 2</p>
+</div> -->
+
+
+<div *ngIf="num > thresholdNumber then temp1;  else temp2"></div>
+
+
+<!-- Register User Template -->
+<ng-template #temp1>
+  <p>Template 1</p>
+</ng-template>
+
+<!-- Modal olabilir -->
+<ng-template #temp2>
+  <p>Template 2</p>
+</ng-template>
+
+
+<!-- Ternary If -->
+<!-- 3 case kadar kullanılabilir ama 3 caseden sonra okunaklı değil -->
+<div [ngClass]="(num > 1 && num < 5) ? 'active':(num > 5 && num < 10) ? 'pasive':'disabled'"></div>
+
+<div *ngIf="(num > 1 && num < 5) ? 'active':(num > 5 && num < 10) ? 'pasive':'disabled'"></div>
+
+
+<button [disabled]="num > 5">Button</button>
+
+
+{{title.getTitle()}}
