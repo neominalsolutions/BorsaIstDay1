@@ -12,6 +12,8 @@ Visible or Hidden
 
 
 
-<input (change)="onNameChange($event)" placeholder="" />
+<!-- $any angular 13 sonrasında any olarak tanımlanmış tipteki değerlere view üzerinden erişmek için $any service tanımı geldi.  -->
+
+<input (change)="name= $any($event).target.value" placeholder="" />
 
 <button (click)="onClick()">Click Me</button>

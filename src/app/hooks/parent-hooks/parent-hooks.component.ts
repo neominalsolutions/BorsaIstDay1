@@ -97,11 +97,6 @@ export class ParentHooksComponent
     // console.log('ngOnDestroy');
   }
 
-  onNameChange(event: any) {
-    this.name = event.target.value;
-    // name input state değişikliği var docheck bu durumdan da etkileniyor
-  }
-
   onClick() {
     // sadece event çalışıyor docheck bu durumdan da etkileniyor
     alert('clicked');
