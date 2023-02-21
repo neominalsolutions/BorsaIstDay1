@@ -5,9 +5,11 @@ import { AppComponent } from './app.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
 import { ParentComponent } from './parent-childs/parent/parent.component';
 import { ChildComponent } from './parent-childs/child/child.component';
+import { ParentHooksComponent } from './hooks/parent-hooks/parent-hooks.component';
+import { ChildHooksComponent } from './hooks/child-hooks/child-hooks.component';
 
 @NgModule({
-  declarations: [AppComponent, DataBindingComponent, ParentComponent, ChildComponent],
+  declarations: [AppComponent, DataBindingComponent, ParentComponent, ChildComponent, ParentHooksComponent, ChildHooksComponent],
   imports: [BrowserModule],
   providers: [],
   bootstrap: [AppComponent],

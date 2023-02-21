@@ -1,0 +1,17 @@
+
+<ng-content></ng-content>
+
+<input type="checkbox" [checked]="childIsVisible" (change)="childIsVisible = !childIsVisible" />
+Visible or Hidden
+
+<ng-container *ngIf="childIsVisible">
+  <borsa-ist-child-hooks #child [name]="name">
+    <h1>Child</h1>
+  </borsa-ist-child-hooks>
+</ng-container>
+
+
+
+<input (change)="onNameChange($event)" placeholder="" />
+
+<button (click)="onClick()">Click Me</button>
