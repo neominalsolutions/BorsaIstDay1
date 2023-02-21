@@ -1,0 +1,30 @@
+<p>input-demo works!</p>
+<!-- one way binding (ngModelChange) [ngModel] ve two way binding [(ngModel)] -->
+
+<!-- one way -->
+<!-- ngModel ve ngModelChange ile çalışmak istersek bu durumda FormsModule uyfulamaya import etmemiz lazım -->
+
+<p>OnewayModel: {{oneWayModel}}</p>
+
+<input type="text" [value]="oneWayModel" (change)="oneWayModel = $any($event).target.value" placeholder="change event" >
+<br>
+
+<input type="text" [value]="oneWayModel" (input)="oneWayModel = $any($event).target.value" placeholder="input event">
+<br>
+
+<!-- [ngModel] [value] -->
+<!-- ngModelChange (input) -->
+
+<br>
+<input type="text" [ngModel]="oneWayModel" (ngModelChange)="oneWayModel = $event" placeholder="ngModel one way">
+
+<!-- two way binding -->
+<!-- hem attribute hemde event aynı anda işlem yapıyor -->
+<input type="text" [(ngModel)]="oneWayModel" placeholder="ngModel">
+<br>
+
+<span>{{isMarried}}</span>
+<input  type="checkbox" [(ngModel)]="isMarried"> Evli Mi
+
+<br>
+<input  type="checkbox" [checked]="isMarried" (change)="isMarried = $any($event).target.checked"> Evli Mi

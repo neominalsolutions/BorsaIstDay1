@@ -7,10 +7,20 @@ import { ParentComponent } from './parent-childs/parent/parent.component';
 import { ChildComponent } from './parent-childs/child/child.component';
 import { ParentHooksComponent } from './hooks/parent-hooks/parent-hooks.component';
 import { ChildHooksComponent } from './hooks/child-hooks/child-hooks.component';
+import { InputDemoComponent } from './input-model-binding/input-demo/input-demo.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, DataBindingComponent, ParentComponent, ChildComponent, ParentHooksComponent, ChildHooksComponent],
-  imports: [BrowserModule],
+  declarations: [
+    AppComponent,
+    DataBindingComponent,
+    ParentComponent,
+    ChildComponent,
+    ParentHooksComponent,
+    ChildHooksComponent,
+    InputDemoComponent,
+  ],
+  imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
